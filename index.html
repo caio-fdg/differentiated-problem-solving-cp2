@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCP Game</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>CP II - DIFFERENTIATED PROBLEM SOLVING</h1>
+
+        <section class="student">
+          <h3>Caio Fernando de Deus Gomes</h3>
+          <h3>1ESPA</h3>
+        </section>
+
+        <section>
+          <h2>A trigonometria para salvar vidas</h2>
+          <p>	Levando em consideração que uma função seno pode ser representada por uma ondulação no plano cartesiano, podemos dizer então que os valores respectivos de cada crista e vale, seguem uma certa lógica expressada por essa função e acabam por ter uma frequência. Dessa forma, podendo se observar algumas características como amplitude, período e frequência</p>
+          <p>
+            Existem muitas situações no dia a dia em que a frequência de uma determinada ação pode salvar uma vida, é o caso da RCP (Ressuscitação Cardiopulmonar ou Reanimação Cardiorrespiratória), técnica utilizada para manter o fluxo de sangue e oxigênio para o cérebro e órgãos vitais durante uma parada cardíaca, tal manobra deve ser realizada em adultos sobre o centro do tórax, em ritmo rápido e constante de 100 a 120 compressões por minuto.
+          </p>
+          <p>
+            Curiosamente, a música Stayin' Alive, dos Bee Gees, segue uma frequência de batidas muito próxima a  frequência de compressão ideal para uma RCP, no caso, cerca de 103 BPM (batidas por minuto).
+          </p>
+          <p>
+            Utilizando a função seno, podemos construir e representar tanto a frequência de batidas da música quanto a frequência de compressões por minutos e compará-las lado a lado.
+          </p>
+        </section>
+
+        <section>
+          <h2>A função seno</h2>
+          <p>
+            A função seno pode ser escrita como: f(x) = A · sen(2π · F · x), A representa a amplitude, F é a frequência em hertz e x representa o tempo em segundos. Para simplificar a demonstração, iremos definir amplitude igual a 1.
+          </p>
+          <p>
+            O 2π corresponde a uma volta completa no círculo trigonométrico, equivalente a 360° ou 2π radianos. Assim, a frequência determina quantas voltas a onda completa a cada segundo.
+          </p>
+          <p>
+            Para converter compressões ou batidas por minuto em hertz, basta dividir o valor por 60, assim podemos construir as funções e seus respectivos gráficos.
+          </p>
+        </section>
+
+        <section>
+          <h2>Gráficos e comparações</h2>
+          <p>
+            Como a frequência de compressões por minuto é de 100 a 120, vamos utilizar dois valores diferentes para exemplificar nos gráficos, no caso sendo 110 e 104, e mostrar o quão próximo do ideal a frequência de batidas da música dos Bee Gees segue ao padrão recomendado. 
+          </p>
+
+          <article>
+            <h3>RCP com 110 compressões por minuto</h3>
+            <p>
+              Considerando uma frequência de 110 compressões por minuto, dentro do intervalo recomendado para uma RCP em adultos. Temos:
+            </p>
+            <p>F = 110 ÷ 60 ≈ 1,8333 Hz</p>
+            <p>R₁(x) = sen((11π/3) · x)</p>
+
+            <img src="./src/assets/imgs/graficos/rcp_110.png" alt="Gráfico da função seno correspondente a 110 compressões por minuto" loading="lazy">
+          </article>
+
+          <article>
+            <h3>RCP com 104 compressões por minuto</h3>
+            <p>
+              Agora com frequência de 103 compressões por minuto, mantendo a frequência dentro do intervalo recomendado. Temos:
+            </p>
+            <p>F = 104 ÷ 60 ≈ 1,7333 Hz</p>
+            <p>R₂(x) = sen((52π/15) · x)</p>
+
+            <img src="./src/assets/imgs/graficos/rcp_104.png" alt="Gráfico da função seno correspondente a 104 compressões por minuto" loading="lazy">
+          </article>
+
+          <article>
+            <h3>Ritmo da música Stayin' Alive</h3>
+            <p>
+              A música possui aproximadamente 103 batidas por minuto, então usando a mesma lógica, podemos representar seu ritmo por outra função seno:
+            </p>
+            <p>F = 103 ÷ 60 ≈ 1,7167 Hz</p>
+            <p>M(x) = sen((103π/30) · x)</p>
+
+            <img src="./src/assets/imgs/graficos/musica_103.png" alt="Gráfico da função seno correspondente ao ritmo de 103 BPM da música" loading="lazy">
+
+          </article>
+
+          <article>
+            <h3>Sobreposição de gráficos</h3>
+            <p>
+              Agora com os devidos gráficos apresentados, podemos comparar e ver o quão próximas suas frequências são.
+            </p>
+            <p>Primeiramente RCP 110 compressões x Música:</p>
+
+            <img src="./src/assets/imgs/graficos/comparacao_110_103.png" alt="Comparação entre as funções seno da RCP com 110 CPM e da música com 103 BPM" loading="lazy">
+
+            <p>
+              Ao sobrepor os gráficos, podemos notar que, em certo ponto, as ondas começam a se afastar e, posteriormente, voltam a se sobrepor. Isso acontece devido à diferença de 7 ciclos por minuto entre suas frequências. Tal diferença não quer dizer que uma está certa e a outra errada, mas mostra como uma pequena alteração na frequência pode causar uma diferença perceptível ao longo do tempo.
+            </p>
+          </article>
+
+          <article>
+            <h3>Segunda comparação: RCP 104 CPM e Música de 103 BPM</h3>
+            <p>
+              Aproximando um pouco mais a frequência de ambos os eventos, podemos notar que esse afastamento das ondas ainda ocorre, mas mostra o quão próxima da taxa de compressão o ritmo da música se aproxima.
+            </p>
+            <img src="./src/assets/imgs/graficos/comparacao_104_103.png" alt="Comparação entre as funções seno da RCP com 104 CPM e da música com 103 BPM" loading="lazy">
+          </article>
+        </section>
+
+        <section>
+          <h2>Da teoria à prática: RCP Game</h2>
+          <p>
+            Depois de observar gráficos e funções, talvez para alguns ainda não esteja visível o suficiente em como essas frequências são próximas, então que tal experimentar isso na prática?
+          </p>
+          <p>
+            O game abaixo irá demonstrar ambos os eventos, tanto a RCP (melhor fazer direito para não matar o paciente) com o ritmo da música.
+          </p>
+          <p>
+            No exemplo, estaremos levando em conta que o ritmo da música é a taxa ideal para a RCP, sendo de 103 compressões por minuto, o que ainda se enquadra no ritmo ideal.
+          </p>
+          <p>
+            Espero que se divirta, e bom jogo. :)
+          </p>
+
+          <p>
+            obs.: caso o vídeo nao carregue, por favor recarregue a página limpando o cache (ctrl + f5)
+          </p>
+        </section>
+
+        <section class="game-section">
+
+            <div class="game-container">
+                <div class="rcp-container">
+                    <img src="./src/assets/imgs/modelo.png" alt="Imagem de tórax">
+
+                    <button
+                        class="rcp-btn"
+                        id="rcp-btn"
+                        aria-label="Realizar compressão"
+                        disabled>
+                    </button>
+
+                    <div class="judgement" id="judgement"></div>
+                </div>
+
+                <h2 id="game-message">AGUARDANDO</h2>
+
+                <p>Compressões: <span id="compression-count">0</span></p>
+
+                <div class="score-container">
+                    <p>Pontuação: <strong id="score">0</strong></p>
+
+                    <div class="score-details">
+                        <span class="perfect-text">
+                            PERFECT: <strong id="perfect-count">0</strong>
+                        </span>
+                        <span class="okay-text">
+                            OKAY: <strong id="okay-count">0</strong>
+                        </span>
+                        <span class="bad-text">
+                            BAD: <strong id="bad-count">0</strong>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="prepare-btn" disabled>Preparar jogo</button>
+                    <button id="pause-btn" disabled>Pausar</button>
+                </div>
+            </div>
+
+            <div class="monitor-container">
+                <div class="video-container">
+                    <div id="youtube-player"></div>
+                </div>
+
+                <section class="chart-section">
+                    <h2>Monitoramento das Compressões</h2>
+
+                    <div class="chart-info">
+                        <p>Ideal: <strong id="ideal-bpm">103</strong> BPM</p>
+                        <p>Jogador: <strong id="player-bpm">0</strong> BPM</p>
+                        <p>Precisão: <strong id="accuracy">0</strong>%</p>
+                    </div>
+
+                    <canvas id="rcp-chart" width="1000" height="300"></canvas>
+
+                    <div class="chart-legend">
+                        <span class="player-legend">— Jogador</span>
+                        <span class="ideal-legend">— Ideal</span>
+                    </div>
+                </section>
+            </div>
+
+        </section>
+
+        <div class="modal" id="game-modal">
+            <div class="modal-content">
+                <h2>Preparação</h2>
+                <p>
+                    Aguarde o término de qualquer propaganda do YouTube.
+                    Depois, clique em iniciar.
+                </p>
+                <button id="start-btn">Iniciar jogo</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./src/js/commands.js"></script>
+</body>
+</html>

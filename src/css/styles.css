@@ -1,0 +1,387 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #202938;
+    background-image: url(../assets/imgs/background.png);
+}
+
+.container {
+    width: 1300px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #f1bebebb;
+    backdrop-filter: blur(2px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.student{
+    display: flex;
+    gap: 100px;
+    margin: 0 auto;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+section{
+    margin: 40px 0;
+}
+
+section h2{
+    margin: 10px 0;
+}
+section h3{
+    margin-top: 20px;
+}
+section article{
+    margin-left: 20px;
+}
+
+section p{
+    margin: 10px 0;
+}
+section img{
+    width: 100%;
+    border-radius: 20px;
+    margin: 20px 0 10px;
+}
+
+.game-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.game-container {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+.rcp-container {
+    position: relative;
+    width: 100%;
+}
+
+.rcp-container img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Botão arcade */
+
+.rcp-btn {
+    --beat-progress: 0;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    border: 3px solid #5c6470;
+    background: #858d99;
+
+    cursor: pointer;
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    box-shadow:
+        0 7px 0 #454c56,
+        0 11px 15px rgba(0, 0, 0, 0.25),
+        inset 0 5px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -5px 8px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.07s linear,
+        background-color 0.07s linear,
+        box-shadow 0.07s linear;
+}
+
+.rcp-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.rcp-btn.ready {
+    background: #22c55e;
+    border-color: #15803d;
+
+    box-shadow:
+        0 7px 0 #166534,
+        0 0 22px rgba(34, 197, 94, 0.65),
+        0 0 40px rgba(34, 197, 94, 0.3),
+        inset 0 5px 6px rgba(255, 255, 255, 0.45);
+}
+
+.rcp-btn.pressed {
+    background: #22c55e;
+    border-color: #15803d;
+
+    box-shadow:
+        0 2px 0 #166534,
+        inset 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Feedback de cada compressão */
+
+.judgement {
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    transform: translateX(-50%);
+
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.judgement.show {
+    animation: judgement-pop 0.65s ease-out forwards;
+}
+
+.judgement.perfect {
+    color: #16a34a;
+}
+
+.judgement.okay {
+    color: #eab308;
+}
+
+.judgement.bad {
+    color: #dc2626;
+}
+
+@keyframes judgement-pop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 15px) scale(0.6);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -8px) scale(1.15);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -30px) scale(1);
+    }
+}
+
+#game-message {
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+.score-container {
+    margin-top: 18px;
+    padding: 18px;
+    background: white;
+    border-radius: 10px;
+}
+
+#score {
+    font-size: 30px;
+}
+
+.score-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.perfect-text {
+    color: #16a34a;
+}
+
+.okay-text {
+    color: #ca8a04;
+}
+
+.bad-text {
+    color: #dc2626;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#prepare-btn,
+#pause-btn,
+#start-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#prepare-btn,
+#start-btn {
+    background: #2563eb;
+}
+
+#pause-btn {
+    background: #d97706;
+}
+
+#prepare-btn:disabled,
+#pause-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Vídeo e gráfico */
+
+.monitor-container {
+    width: 560px;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+#youtube-player,
+.video-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.chart-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+}
+
+.chart-section h2 {
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.chart-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+#rcp-chart {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #111827;
+    border-radius: 8px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.player-legend {
+    color: #16a34a;
+}
+
+.ideal-legend {
+    color: #f59e0b;
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal-content {
+    width: 400px;
+    max-width: 90%;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.modal-content button {
+    margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+    .game-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-container,
+    .monitor-container {
+        width: 100%;
+    }
+
+    .chart-info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-controls,
+    .score-details {
+        flex-wrap: wrap;
+    }
+
+    .judgement {
+        font-size: 22px;
+    }
+}
